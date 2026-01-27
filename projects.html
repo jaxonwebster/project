@@ -4,20 +4,141 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Jaxon Webster</title>
+
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
 </head>
 <body>
 
+  <!-- Background -->
+  <div class="signal-bg">
+    <canvas id="signalCanvas"></canvas>
+  </div>
+
+  <!-- Navbar -->
   <header class="navbar">
     <a href="index.html" class="logo">JW</a>
+    <button class="menu-btn" id="menuBtn">☰</button>
   </header>
 
-  <section class="hero">
-    <h1>Projects</h1>
-    <p class="hero-text">
-      Content coming soon.
-    </p>
+  <!-- Slide-out Menu -->
+  <nav class="side-menu" id="sideMenu">
+    <button class="close-menu" id="closeMenu">✕</button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="resume.html">Resume</a>
+    <a href="endorsements.html">Endorsements</a>
+  </nav>
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- =========================
+       PROJECTS HERO
+  ========================== -->
+  <section class="about-hero">
+    <h1 class="gradient-text">Projects & Experience</h1>
   </section>
 
+  <section class="projects-section">
+  <div class="project-grid">
+
+    <div class="project-card">
+      <div class="project-image">
+        <img src="images/IMG_5556.jpg" alt="Cineniche">
+      </div>
+      <div class="project-content">
+        <h3>Cineniche</h3>
+        <p>
+          My team and I placed 2nd in a coding competition to create a functional
+          streaming service that recommends movies based on watch history and preferences.
+        </p>
+        <a
+          href="https://youtu.be/du8ue6cPfEI"
+          class="project-btn"
+          target="_blank"
+        >
+          View Demo
+        </a>
+      </div>
+    </div>
+
+    <div class="project-card">
+  <div class="project-image carousel">
+
+    <button class="carousel-btn prev" aria-label="Previous image">‹</button>
+
+    <img src="images/image.png" alt="Web Design Intern site 1">
+    <img src="images/IMG_4509.jpeg" alt="Web Design Intern site 2">
+    <img src="images/image3.png" alt="Web Design Intern site 3">
+
+    <button class="carousel-btn next" aria-label="Next image">›</button>
+
+  </div>
+
+  <div class="project-content">
+    <h3>Web Design Intern</h3>
+    <p>
+      As a Web Design Intern for Lemonade Stand, I helped design and create
+      100+ different client websites.
+    </p>
+    <a href="projects.html" class="project-btn">
+      View My Work
+    </a>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+
+  <!-- Footer (same as About page) -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-profile">
+        <img src="images/portrait.jpg" alt="Jaxon Webster" class="footer-avatar" />
+        <p class="footer-name">Jaxon Webster</p>
+
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/jaxon-webster" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:jaxonwebster4@gmail.com">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="tel:5202600258">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:jaxonwebster4@gmail.com">jaxonwebster4@gmail.com</a></p>
+        <p>Phone: <a href="tel:5202600258">(520) 260-0258</a></p>
+        <p>Location: Logan, Utah</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+      </div>
+
+    </div>
+
+    <p class="footer-bottom">© 2026 Jaxon Webster</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

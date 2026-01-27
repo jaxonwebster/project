@@ -341,12 +341,32 @@ body {
 .project-image {
   height: 50%;
   min-height: 180px;
+  background: transparent;
 }
+.project-image.carousel {
+  position: relative;
+  overflow: hidden;
+  background: transparent; /* 👈 remove black */
+}
+.carousel img {
+  width: 100%;
+  height: auto;          /* 👈 let image define height */
+  max-height: 380px;     /* keeps it from getting huge */
+  object-fit: contain;
+
+  display: none;
+}
+
+.carousel img.active {
+  display: block;
+}
+
 
 .project-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-height: 360px;
+  height: auto;
+  object-fit: contain;
   display: block;
 }
 
@@ -983,4 +1003,274 @@ body {
 .about-float-image {
   position: relative;
   z-index: 3;   /* image ABOVE blur */
+}
+/* =========================
+   PROJECTS PAGE
+========================= */
+
+.projects-page {
+  padding: 4rem 2rem 5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.projects-title {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+
+/* Project list container */
+.projects-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Individual card */
+.project-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  padding: 2rem 2.25rem;
+  border-radius: 18px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+/* Project title */
+.project-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+/* Description */
+.project-description {
+  color: #4a4a4a;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+/* Link button */
+.project-link {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  color: #5b63d6;
+  border: 2px solid #5b63d6;
+  border-radius: 8px;
+
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.project-link:hover {
+  background: #5b63d6;
+  color: #ffffff;
+}
+
+/* =========================
+   MOBILE ADJUSTMENTS
+========================= */
+
+@media (max-width: 768px) {
+  .project-card {
+    padding: 1.75rem;
+  }
+
+  .project-name {
+    font-size: 1.25rem;
+  }
+}
+/* =========================
+   PROJECTS PAGE
+========================= */
+
+.projects-section {
+  padding: 3rem 2rem 5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.projects-content {
+  max-width: 900px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Reuses the About glass-panel feel */
+.project-panel {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  padding: 2rem 2.25rem;
+  border-radius: 18px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.project-panel h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.project-panel p {
+  color: #4a4a4a;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+/* Same button language as elsewhere */
+.project-link {
+  display: inline-block;
+  font-weight: 600;
+  color: #5b63d6;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.project-link:hover {
+  border-color: #5b63d6;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .project-panel {
+    padding: 1.75rem;
+  }
+}
+
+
+
+/* =========================
+   PROJECTS (STACKED CARDS)
+========================= */
+.project-image {
+  margin: 0;
+}
+
+.project-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Card container */
+.project-card {
+  display: flex;
+  flex-direction: column;
+
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+/* Image */
+.project-image img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content */
+.project-content {
+  padding: 1.rem 1.25rem;
+}
+
+.project-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.project-content p {
+  color: #4a4a4a;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+/* Button */
+.project-btn {
+  display: inline-block;
+  padding: 0.55rem 1.3rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  color: #ffffff;
+  background: #5b63d6;
+  border-radius: 10px;
+  text-decoration: none;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(91, 99, 214, 0.35);
+}
+@media (max-width: 768px) {
+  .project-image img {
+    height: 220px;
+  }
+}
+.carousel {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.carousel img {
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+  display: none;
+}
+
+.carousel img.active {
+  display: block;
+}
+
+/* Arrows */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
 }

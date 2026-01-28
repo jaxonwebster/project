@@ -8,16 +8,108 @@
 </head>
 <body>
 
+ <!-- Navbar -->
   <header class="navbar">
     <a href="index.html" class="logo">JW</a>
+    <button class="menu-btn" id="menuBtn">☰</button>
   </header>
 
-  <section class="hero">
-    <h1>Resume</h1>
-    <p class="hero-text">
-      Content coming soon.
-    </p>
-  </section>
+  <!-- Slide-out Menu -->
+  <nav class="side-menu" id="sideMenu">
+    <button class="close-menu" id="closeMenu">✕</button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="resume.html">Resume</a>
+    <a href="endorsements.html">Endorsements</a>
+  </nav>
+
+
+<!-- =========================
+     RESUME HERO
+========================== -->
+<section class="resume-hero">
+
+  <!-- Moving background words -->
+  <div class="hero-words">
+    <div class="hero-words-row row-1">
+      <span>CREATIVE</span>
+      <span>CURIOUS</span>
+      <span>DISCIPLINED</span>
+      <span>ADAPTIVE</span>
+    </div>
+
+    <div class="hero-words-row row-2">
+      <span>RELIABLE</span>
+      <span>INTENTIONAL</span>
+      <span>FOCUSED</span>
+      <span>CONSISTENT</span>
+    </div>
+  </div>
+
+  <!-- Portrait sits on bottom -->
+  <div class="hero-portrait">
+    <img src="images/6F8BE828-A287-4707-9C13-C329A738D836.png" alt="Jaxon Webster">
+  </div>
+
+</section>
+
+
+<!-- Name + title OUTSIDE hero -->
+<div class="hero-name-block">
+  <h1 class="gradient-text">Resumé</h1>
+  <p>Web Developer · Problem Solver · Lifelong Learner</p>
+</div>
+
+<!-- =========================
+     RESUME CONTENT
+========================== -->
+<section class="resume-content">
+
+  <!-- Education -->
+  <div class="resume-card">
+    <h2>Education</h2>
+    <ul>
+      <li>
+        <strong>Utah State University</strong> — M.S. Web Development & Cybersecurity  
+        <span>Expected April 2027</span>
+      </li>
+      <li>
+        <strong>Brigham Young University</strong> — B.S. Management Information Systems
+      </li>
+    </ul>
+  </div>
+
+  <!-- Experience -->
+  <div class="resume-card">
+    <h2>Experience</h2>
+    <ul>
+      <li>
+        <strong>Web Design Intern</strong> — Lemonade Stand  
+        <p>Designed and developed 100+ client websites with a focus on usability, branding, and performance.</p>
+      </li>
+      <li>
+        <strong>Project Lead</strong> — CineNiche  
+        <p>Led a team to build a functional streaming recommendation platform under a 4-day deadline.</p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Skills -->
+  <div class="resume-card">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>HTML, CSS, JavaScript</li>
+      <li>Python, C#, .NET</li>
+      <li>Responsive Design</li>
+      <li>UI/UX Principles</li>
+      <li>Git & Version Control</li>
+    </ul>
+  </div>
+
+</section>
+
+
 
 </body>
 </html>

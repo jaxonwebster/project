@@ -1445,7 +1445,17 @@ body {
   width: auto;
   height: auto;
   display: block;
-  filter: drop-shadow(0 20px 35px rgba(0,0,0,0.18));
+  filter: none;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 /* Text */

@@ -1576,7 +1576,7 @@ body {
 }
 
 .section-experience {
-  background: #e7ddc1;
+   background: #8bc397
 }
 
 /* Skills: calm finish */
@@ -1715,3 +1715,123 @@ body {
   margin-bottom: 0.5rem;
   line-height: 1.4;
 }
+
+
+
+/* =========================
+   ENDORSEMENTS HERO
+========================= */
+
+.endorsements-hero {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+  background: #f8f7f3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Newspaper image layer */
+.newspaper-bg {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("images/ChatGPT\ Image\ Jan\ 28\,\ 2026\,\ 02_18_41\ PM.png");
+  /* 👆 update path to wherever you saved the image */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: blur(1.5px);       /* 👈 subtle blur */
+  transform: scale(1.05);    /* prevents blur edges */
+  opacity: 0.45;             /* fades intensity */
+
+  z-index: 1;
+}
+
+/* Optional: soft paper overlay (VERY nice) */
+.newspaper-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+/* Foreground text */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  margin-bottom: 0.5rem;
+  
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+
+
+
+.endorsements-content {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.quote-block {
+  position: relative;
+}
+
+.quote-mark {
+  font-size: 4rem;
+  opacity: 0.12;
+}
+
+blockquote {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.quote-author {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Transparent navbar ONLY on endorsements page */
+.transparent-nav .navbar {
+  background: transparent;
+  box-shadow: none;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+

@@ -6,18 +6,93 @@
   <title>Endorsements | Jaxon Webster</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="transparent-nav">
 
+<!-- Navbar -->
   <header class="navbar">
     <a href="index.html" class="logo">JW</a>
+    <button class="menu-btn" id="menuBtn">☰</button>
   </header>
 
-  <section class="hero">
+  <!-- Slide-out Menu -->
+<nav class="side-menu" id="sideMenu">
+  <button class="close-menu" id="closeMenu">✕</button>
+
+  <a href="index.html">Home</a>
+  <a href="about.html">About Me</a>
+  <a href="projects.html">Projects</a>
+  <a href="resume.html">Resume</a>
+  <a href="endorsements.html">Endorsements</a>
+</nav>
+
+<!-- =========================
+     HERO
+========================== -->
+<section class="endorsements-hero">
+
+  <!-- Newspaper background image -->
+  <div class="newspaper-bg"></div>
+
+  <!-- Foreground content -->
+  <div class="hero-content">
     <h1>Endorsements</h1>
-    <p class="hero-text">
-      Content coming soon.
-    </p>
+    <p>What others have said about working with me</p>
+  </div>
+
+</section>
+
+
+
+
+
+<!-- =========================
+     CONTENT
+========================== -->
+<main class="endorsements-content">
+
+  <section class="quote-block fade-in">
+    <span class="quote-mark">“</span>
+    <blockquote>
+      You were such a great addition to our web team! You're a total team player that tackled any task or project that was thrown at you like a champ. I'm really grateful for your drive and attention to detail that helped us present a client with a front-facing solution that you owned from start to finish!
+    </blockquote>
+    <p class="quote-author">— Sergio Udave, Web Developer</p>
   </section>
 
+  <section class="quote-block fade-in">
+    <span class="quote-mark">“</span>
+    <blockquote>
+      It was a great experience working with you. Your work ethic, problem-solving ability, and friendly demeanor are qualities any company would be lucky to have!
+    </blockquote>
+    <p class="quote-author">— Yvette Hallows, Web Designer</p>
+  </section>
+
+  <section class="quote-block fade-in">
+    <span class="quote-mark">“</span>
+    <blockquote>
+      It is a pleasure to strongly endorse Jaxon Webster. My recommendation is based upon 1 year as his Career Coach and direct beneficiary of his work as a career data analyst... Jaxon can connect the dots. He asks key questions that clarify processes. He seeks out the analytics, writes Python scripts, and leaverages SQL creating Tableau dashboards and reports that driv decisions. He is a delight to work with and knows how to build and interact with teams.
+    </blockquote>
+    <p class="quote-author">— Reid Grawe, Director of Placement at Brigham Young University</p>
+  </section>
+
+</main>
+
+<script>
+  const quotes = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  quotes.forEach(q => observer.observe(q));
+</script>
+<script src="script.js"></script>
 </body>
 </html>

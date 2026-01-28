@@ -199,7 +199,7 @@ body {
 .logo {
   width: 32px;
   height: 32px;
-  border: 2px solid #8E7332;
+  border: 2px solid #3E9E52;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1072,8 +1072,7 @@ body {
   font-weight: 600;
   font-size: 0.95rem;
 
-  color: #5b63d6;
-  border: 2px solid #5b63d6;
+  color: #3E9E52;
   border-radius: 8px;
 
   text-decoration: none;
@@ -1228,7 +1227,7 @@ body {
   font-size: 0.95rem;
 
   color: #ffffff;
-  background: #5b63d6;
+  background: #3E9E52;
   border-radius: 10px;
   text-decoration: none;
 

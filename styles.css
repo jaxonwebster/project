@@ -1717,7 +1717,6 @@ body {
 }
 
 
-
 /* =========================
    ENDORSEMENTS HERO
 ========================= */
@@ -1725,60 +1724,84 @@ body {
 .endorsements-hero {
   position: relative;
   height: 70vh;
-  width: 100%;
+  min-height: 500px;
   overflow: hidden;
-  background: #f8f7f3;
-
+  background: linear-gradient(
+    160deg,
+    #a6e3b8 0%,
+    #8fd19d 45%,
+    #79c08a 100%
+  ) !important;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Newspaper image layer */
-.newspaper-bg {
-  position: absolute;
-  inset: 0;
-
-  background-image: url("images/ChatGPT\ Image\ Jan\ 28\,\ 2026\,\ 02_18_41\ PM.png");
-  /* 👆 update path to wherever you saved the image */
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  filter: blur(1.5px);       /* 👈 subtle blur */
-  transform: scale(1.05);    /* prevents blur edges */
-  opacity: 0.45;             /* fades intensity */
-
-  z-index: 1;
-}
-
-/* Optional: soft paper overlay (VERY nice) */
-.newspaper-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.55);
-}
-
-/* Foreground text */
-.hero-content {
+/* Center image */
+.hero-center {
   position: relative;
   z-index: 2;
-  text-align: center;
-  
 }
 
-.hero-content h1 {
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
-  margin-bottom: 0.5rem;
-  
+.hero-image {
+  max-width: 320px;
+  width: 100%;
 }
 
-.hero-content p {
-  font-size: 1.5rem;
-  font-weight: bold;
+/* Floating praise */
+.praise-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
 }
+
+.praise {
+  position: absolute;
+  max-width: 240px;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1f3d2b;
+  font-size: 0.9rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  animation: praiseFloat 8s ease-in-out forwards;
+}
+
+/* Animation */
+@keyframes praiseFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .endorsements-hero {
+    height: 60vh;
+  }
+
+  .hero-image {
+    max-width: 240px;
+  }
+}
+
 
 
 

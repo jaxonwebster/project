@@ -25,7 +25,6 @@ if (menuBtn && sideMenu && closeMenu) {
   }
 }
 
-
 /* =========================
    TYPEWRITER
 ========================= */
@@ -177,7 +176,9 @@ if (canvas) {
     lines.forEach((line) => line.draw());
 
     if (Math.random() < 0.035) {
-      pulses.push(new Pulse(lines[Math.floor(Math.random() * lines.length)]));
+      pulses.push(
+        new Pulse(lines[Math.floor(Math.random() * lines.length)])
+      );
     }
 
     for (let i = pulses.length - 1; i >= 0; i--) {
@@ -192,15 +193,20 @@ if (canvas) {
   animate();
 }
 
-document.querySelectorAll(".carousel").forEach(carousel => {
+/* =========================
+   CAROUSEL
+========================= */
+document.querySelectorAll(".carousel").forEach((carousel) => {
   const images = carousel.querySelectorAll("img");
   const prev = carousel.querySelector(".prev");
   const next = carousel.querySelector(".next");
 
+  if (!prev || !next || images.length === 0) return;
+
   let index = 0;
 
   function showImage(i) {
-    images.forEach(img => img.classList.remove("active"));
+    images.forEach((img) => img.classList.remove("active"));
     images[i].classList.add("active");
   }
 
@@ -215,4 +221,64 @@ document.querySelectorAll(".carousel").forEach(carousel => {
   });
 
   showImage(index);
+});
+
+/* =========================
+   FLOATING PRAISE (ENDORSEMENTS HERO)
+========================= */
+window.addEventListener("DOMContentLoaded", () => {
+  const praiseLayer = document.getElementById("praiseLayer");
+  if (!praiseLayer) return;
+
+  const praiseTexts = [
+    "A total team player",
+    "Attention to detail",
+    "Great work ethic",
+    "Strong problem-solving ability",
+    "Jaxon connects the dots",
+    "Asks key questions",
+    "A dleight to work with",
+    "Knows how to build and interact with teams",
+    "Friendly demeanor",
+    "Any company would be lucky to have Jaxon",
+    "Amazing!",
+    "Your work ethic will take you far",
+    "Keep building and blessing!",
+    "Absolute stellar teammate!",
+    "Impressive work!",
+    ""
+  ];
+
+  function createPraise() {
+    const praise = document.createElement("div");
+    praise.className = "praise";
+    praise.textContent =
+      praiseTexts[Math.floor(Math.random() * praiseTexts.length)];
+
+    let top, left;
+
+    // avoid center image area
+    do {
+      top = Math.random() * 80 + 5;
+      left = Math.random() * 90 + 5;
+    } while (
+      left > 35 && left < 65 &&
+      top > 25 && top < 75
+    );
+
+    praise.style.top = top + "%";
+    praise.style.left = left + "%";
+
+    praiseLayer.appendChild(praise);
+
+    setTimeout(() => {
+      praise.remove();
+    }, 8000);
+  }
+
+  // start immediately
+  createPraise();
+
+  // continue spawning
+  setInterval(createPraise, 1500);
 });

@@ -3,25 +3,28 @@
 ========================= */
 const menuBtn = document.getElementById("menuBtn");
 const sideMenu = document.getElementById("sideMenu");
-const overlay = document.querySelector(".overlay");
 const closeMenu = document.getElementById("closeMenu");
+const overlay = document.querySelector(".overlay");
 
-if (menuBtn && sideMenu && overlay && closeMenu) {
+if (menuBtn && sideMenu && closeMenu) {
   menuBtn.addEventListener("click", () => {
     sideMenu.classList.add("open");
-    overlay.classList.add("show");
-  });
-
-  overlay.addEventListener("click", () => {
-    sideMenu.classList.remove("open");
-    overlay.classList.remove("show");
+    if (overlay) overlay.classList.add("show");
   });
 
   closeMenu.addEventListener("click", () => {
     sideMenu.classList.remove("open");
-    overlay.classList.remove("show");
+    if (overlay) overlay.classList.remove("show");
   });
+
+  if (overlay) {
+    overlay.addEventListener("click", () => {
+      sideMenu.classList.remove("open");
+      overlay.classList.remove("show");
+    });
+  }
 }
+
 
 /* =========================
    TYPEWRITER

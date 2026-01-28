@@ -1376,14 +1376,12 @@ body {
   z-index: 2;
 }
 
-/* Moving words behind */
 .hero-words {
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
 }
-
 
 /* Each row */
 .hero-words-row {
@@ -1393,8 +1391,12 @@ body {
   font-size: clamp(4rem, 9vw, 7rem);
   letter-spacing: 0.25rem;
 
-  color: rgba(91, 99, 214, 0.12); /* 👈 your brand blue */
+  /* Make it actually visible */
+  color: #8E7332;                 /* fully opaque */
+  opacity: 0.95;                  /* visual softening */
+  text-shadow: 0 3px 10px rgba(0,0,0,0.15); /* contrast boost */
 }
+
 .hero-name-block {
   text-align: center;     /* 👈 centers name + subtitle */
   margin-top: 2.5rem;
@@ -1562,11 +1564,7 @@ body {
   bottom: 20px;
   width: 4px;
   border-radius: 4px;
-  background: linear-gradient(
-    to bottom,
-    #6c7cff,
-    #9aa6ff
-  );
+  background: #3E9E52;
   opacity: 0.8;
 }
 /* Education: clean + light */
@@ -1578,18 +1576,13 @@ body {
   );
 }
 
-/* Experience: slightly deeper blue */
 .section-experience {
-  background: #3E9E52;
+  background: #e7ddc1;
 }
 
 /* Skills: calm finish */
 .section-skills {
-  background: linear-gradient(
-    to bottom,
-    #eef2ff 0%,
-    #e2e8ff 100%
-  );
+  background: white;
 }
 
 
@@ -1677,7 +1670,7 @@ body {
 .resume-section-title {
   display: inline-block;
   padding-bottom: 0.4rem;
-  border-bottom: 3px solid rgba(108, 124, 255, 0.5);
+  border-bottom: 3px solid #3E9E52;
 }
 .card-grid {
   row-gap: 2.5rem;

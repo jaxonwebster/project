@@ -199,13 +199,13 @@ body {
 .logo {
   width: 32px;
   height: 32px;
-  border: 2px solid #6870cb;
+  border: 2px solid #8E7332;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  color: #6870cb;
+  color: #3E9E52;
 }
 
 .menu-btn {
@@ -260,7 +260,7 @@ body {
 }
 
 .btn.primary {
-  background: #6870cb;
+  background: #3E9E52;
   color: #ffffff;
   z-index: 2;
 }
@@ -268,7 +268,7 @@ body {
 .btn.secondary {
   background: white !important;
   color: #000000;
-  border: 2px solid rgba(0, 0, 0, 0.8);
+  border: 2px solid #8E7332;
   z-index: 2 !important;
 }
 
@@ -476,8 +476,8 @@ body {
   background: linear-gradient(
     to right,
     #000000,
-    #394779,
-    #6870cb
+    #44805b,
+    #3E9E52
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -506,9 +506,9 @@ body {
 .footer {
   background: linear-gradient(
     to right,
-    #2f2d2d,
-    #564e7f,
-    #bcb1f4
+     #000000,
+    #44805b,
+    #3E9E52
   );
   padding: 3rem 2rem 1.5rem;
   color: #ffffff;
@@ -641,7 +641,7 @@ body {
 #rotating-word {
   font-weight: 700;
   font-size: 1.48em;
-  color: #6870cb;
+  color: #3E9E52;
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 @media (max-width: 768px) {
@@ -715,9 +715,9 @@ body {
 .gradient-text {
   background: linear-gradient(
     to right,
-    #000000,
-    #564e7f,
-    #bcb1f4
+     #000000,
+    #44805b,
+    #3E9E52
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1336,7 +1336,7 @@ body {
 
 /* Icons */
 .contact-item i {
-  color: #5b63d6;
+  color: #3E9E52;
   font-size: 1.25rem;
   min-width: 22px;
 }
@@ -1569,6 +1569,29 @@ body {
   );
   opacity: 0.8;
 }
+/* Education: clean + light */
+.section-education {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #f7f9ff 100%
+  );
+}
+
+/* Experience: slightly deeper blue */
+.section-experience {
+  background: #3E9E52;
+}
+
+/* Skills: calm finish */
+.section-skills {
+  background: linear-gradient(
+    to bottom,
+    #eef2ff 0%,
+    #e2e8ff 100%
+  );
+}
+
 
 .flip-card {
   perspective: 1200px;

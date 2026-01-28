@@ -159,7 +159,7 @@ if (canvas) {
 
       ctx.beginPath();
       ctx.arc(x, y, 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(188, 177, 244, 0.9)";
+      ctx.fillStyle = "#8E7332";
       ctx.shadowBlur = 10;
       ctx.shadowColor = "#bcb1f4";
       ctx.fill();

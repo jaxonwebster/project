@@ -1759,15 +1759,33 @@ body {
 .praise {
   position: absolute;
   max-width: 240px;
-  padding: 0.75rem 1rem;
+  padding: 0.8rem 1rem;
   background: rgba(255, 255, 255, 0.95);
   color: #1f3d2b;
   font-size: 0.9rem;
-  border-radius: 16px;
+  border-radius: 18px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   opacity: 0;
   animation: praiseFloat 8s ease-in-out forwards;
 }
+
+/* Speech bubble tail */
+.praise::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 24px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgba(255, 255, 255, 0.95);
+}
+.praise.flip::after {
+  left: auto;
+  right: 24px;
+}
+
 
 /* Animation */
 @keyframes praiseFloat {

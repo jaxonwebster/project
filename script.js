@@ -5,6 +5,7 @@ const menuBtn = document.getElementById("menuBtn");
 const sideMenu = document.getElementById("sideMenu");
 const closeMenu = document.getElementById("closeMenu");
 const overlay = document.querySelector(".overlay");
+const activeBubbles = [];
 
 if (menuBtn && sideMenu && closeMenu) {
   menuBtn.addEventListener("click", () => {
@@ -237,7 +238,7 @@ window.addEventListener("DOMContentLoaded", () => {
     "Strong problem-solving ability",
     "Jaxon connects the dots",
     "Asks key questions",
-    "A dleight to work with",
+    "A delight to work with",
     "Knows how to build and interact with teams",
     "Friendly demeanor",
     "Any company would be lucky to have Jaxon",
@@ -245,8 +246,7 @@ window.addEventListener("DOMContentLoaded", () => {
     "Your work ethic will take you far",
     "Keep building and blessing!",
     "Absolute stellar teammate!",
-    "Impressive work!",
-    ""
+    "Impressive work!"
   ];
 
   function createPraise() {
@@ -255,30 +255,41 @@ window.addEventListener("DOMContentLoaded", () => {
     praise.textContent =
       praiseTexts[Math.floor(Math.random() * praiseTexts.length)];
 
-    let top, left;
+    if (Math.random() > 0.5) {
+      praise.classList.add("flip");
+    }
 
-    // avoid center image area
+    let top, left;
+    let attempts = 0;
+    const minDistance = 18;
+
     do {
       top = Math.random() * 80 + 5;
       left = Math.random() * 90 + 5;
+      attempts++;
     } while (
-      left > 35 && left < 65 &&
-      top > 25 && top < 75
+      (
+        (left > 35 && left < 65 && top > 25 && top < 75) ||
+        activeBubbles.some(pos =>
+          Math.abs(pos.top - top) < minDistance &&
+          Math.abs(pos.left - left) < minDistance
+        )
+      ) &&
+      attempts < 20
     );
 
     praise.style.top = top + "%";
     praise.style.left = left + "%";
 
     praiseLayer.appendChild(praise);
+    activeBubbles.push({ top, left });
 
     setTimeout(() => {
       praise.remove();
+      activeBubbles.shift();
     }, 8000);
   }
 
-  // start immediately
   createPraise();
-
-  // continue spawning
   setInterval(createPraise, 1500);
 });

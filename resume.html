@@ -8,30 +8,30 @@
 </head>
 <body>
 
- <!-- Navbar -->
-  <header class="navbar">
-    <a href="index.html" class="logo">JW</a>
-    <button class="menu-btn" id="menuBtn">☰</button>
-  </header>
+<!-- =========================
+     NAVBAR
+========================== -->
+<header class="navbar">
+  <a href="index.html" class="logo">JW</a>
+  <button class="menu-btn" id="menuBtn">☰</button>
+</header>
 
-  <!-- Slide-out Menu -->
-  <nav class="side-menu" id="sideMenu">
-    <button class="close-menu" id="closeMenu">✕</button>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="projects.html">Projects</a>
-    <a href="resume.html">Resume</a>
-    <a href="endorsements.html">Endorsements</a>
-  </nav>
+<!-- Slide-out Menu -->
+<nav class="side-menu" id="sideMenu">
+  <button class="close-menu" id="closeMenu">✕</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Me</a>
+  <a href="projects.html">Projects</a>
+  <a href="resume.html">Resume</a>
+  <a href="endorsements.html">Endorsements</a>
+</nav>
 <div class="overlay"></div>
-
 
 <!-- =========================
      RESUME HERO
 ========================== -->
 <section class="resume-hero">
 
-  <!-- Moving background words -->
   <div class="hero-words">
     <div class="hero-words-row row-1">
       <span>CREATIVE</span>
@@ -48,15 +48,13 @@
     </div>
   </div>
 
-  <!-- Portrait sits on bottom -->
   <div class="hero-portrait">
     <img src="images/Untitled_Artwork (1).png" alt="Jaxon Webster">
   </div>
 
 </section>
 
-
-<!-- Name + title OUTSIDE hero -->
+<!-- Name block below hero -->
 <div class="hero-name-block">
   <h1 class="gradient-text">Resumé</h1>
   <p>Web Developer · Problem Solver · Lifelong Learner</p>
@@ -68,49 +66,165 @@
 <section class="resume-content">
 
   <!-- Education -->
-  <div class="resume-card">
-    <h2>Education</h2>
-    <ul>
-      <li>
-        <strong>Utah State University</strong> — M.S. Web Development & Cybersecurity  
-        <span>Expected April 2027</span>
-      </li>
-      <li>
-        <strong>Brigham Young University</strong> — B.S. Management Information Systems
-      </li>
-    </ul>
+  <h2 class="resume-section-title">Education</h2>
+
+  <div class="card-grid">
+
+    <label class="flip-card">
+      <input type="checkbox" />
+      <div class="flip-card-inner">
+        <div class="resume-card front">
+          <strong>Utah State University</strong>
+          <p>M.S. Information Systems Management</p>
+          <span>Jan 2026 – Apr 2027</span>
+        </div>
+        <div class="resume-card back">
+          <p>
+            Graduate program focused on systems strategy, analytics, and technical leadership
+            through the Jon M. Huntsman School of Business.
+          </p>
+        </div>
+      </div>
+    </label>
+
+    <label class="flip-card">
+      <input type="checkbox" />
+      <div class="flip-card-inner">
+        <div class="resume-card front">
+          <strong>Brigham Young University</strong>
+          <p>B.S. Information Systems</p>
+          <span>Dec 2025</span>
+        </div>
+        <div class="resume-card back">
+          <p>
+            Completed rigorous coursework in data analysis, web development, and enterprise systems
+            while maintaining a 3.74 GPA.
+          </p>
+        </div>
+      </div>
+    </label>
+
   </div>
 
   <!-- Experience -->
-  <div class="resume-card">
-    <h2>Experience</h2>
-    <ul>
-      <li>
-        <strong>Web Design Intern</strong> — Lemonade Stand  
-        <p>Designed and developed 100+ client websites with a focus on usability, branding, and performance.</p>
-      </li>
-      <li>
-        <strong>Project Lead</strong> — CineNiche  
-        <p>Led a team to build a functional streaming recommendation platform under a 4-day deadline.</p>
-      </li>
-    </ul>
+  <h2 class="resume-section-title">Experience</h2>
+
+  <div class="card-grid">
+
+    <label class="flip-card">
+      <input type="checkbox" />
+      <div class="flip-card-inner">
+        <div class="resume-card front">
+          <strong>Cloud Computing TA</strong>
+          <p>Utah State University</p>
+          <span>Jan 2026 – Present</span>
+        </div>
+        <div class="resume-card back">
+          <p>
+            Assisted 50+ students per term by troubleshooting AWS environments, Docker containers,
+            Linux systems, and Python code while simplifying complex cloud concepts.
+          </p>
+        </div>
+      </div>
+    </label>
+
+    <label class="flip-card">
+      <input type="checkbox" />
+      <div class="flip-card-inner">
+        <div class="resume-card front">
+          <strong>Web Design Intern</strong>
+          <p>Lemonade Stand</p>
+          <span>Jun 2025 – Sep 2025</span>
+        </div>
+        <div class="resume-card back">
+          <p>
+            Built and customized over 200 WordPress websites using HTML, CSS, and JavaScript
+            in a fast-paced agency environment.
+          </p>
+        </div>
+      </div>
+    </label>
+
+    <label class="flip-card">
+      <input type="checkbox" />
+      <div class="flip-card-inner">
+        <div class="resume-card front">
+          <strong>Data Analyst</strong>
+          <p>BYU Business Career Center</p>
+          <span>Sep 2024 – Dec 2025</span>
+        </div>
+        <div class="resume-card back">
+          <p>
+            Developed Python predictive models, authored SQL queries,
+            and built Tableau dashboards used by thousands of students.
+          </p>
+        </div>
+      </div>
+    </label>
+
+    <label class="flip-card">
+      <input type="checkbox" />
+      <div class="flip-card-inner">
+        <div class="resume-card front">
+          <strong>Knowledge Base Supervisor</strong>
+          <p>BYU-Pathway Worldwide</p>
+          <span>Feb 2022 – Sep 2024</span>
+        </div>
+        <div class="resume-card back">
+          <p>
+            Led a 500+ article knowledge base serving 60,000+ global users,
+            implementing automation that saved $14,000 annually.
+          </p>
+        </div>
+      </div>
+    </label>
+
   </div>
 
   <!-- Skills -->
-  <div class="resume-card">
-    <h2>Skills</h2>
-    <ul class="skills-list">
-      <li>HTML, CSS, JavaScript</li>
-      <li>Python, C#, .NET</li>
-      <li>Responsive Design</li>
-      <li>UI/UX Principles</li>
-      <li>Git & Version Control</li>
-    </ul>
+  <h2 class="resume-section-title">Technical Skills</h2>
+
+  <div class="card-grid">
+
+    <label class="flip-card">
+      <input type="checkbox" />
+      <div class="flip-card-inner">
+        <div class="resume-card front">
+          <strong>Frontend</strong>
+        </div>
+        <div class="resume-card back">
+          <p>HTML, CSS, JavaScript, React, Node.js, Bootstrap</p>
+        </div>
+      </div>
+    </label>
+
+    <label class="flip-card">
+      <input type="checkbox" />
+      <div class="flip-card-inner">
+        <div class="resume-card front">
+          <strong>Backend & Data</strong>
+        </div>
+        <div class="resume-card back">
+          <p>Python, Java, C#, ASP.NET Core, SQL, PostgreSQL</p>
+        </div>
+      </div>
+    </label>
+
+    <label class="flip-card">
+      <input type="checkbox" />
+      <div class="flip-card-inner">
+        <div class="resume-card front">
+          <strong>Tools & Platforms</strong>
+        </div>
+        <div class="resume-card back">
+          <p>AWS, Docker, Linux, GitHub, Tableau, Power BI</p>
+        </div>
+      </div>
+    </label>
+
   </div>
 
 </section>
-
-
 
 </body>
 </html>

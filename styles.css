@@ -1500,21 +1500,69 @@ body {
 ========================= */
 
 .resume-content {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 4rem 2rem 5rem;
-
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-
-  position: relative;
-  z-index: 2;
+  padding: 4rem 2rem 6rem;
 }
 
-/* Glass cards */
+.resume-section-title {
+  margin: 4rem 0 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* =========================
+   GRID LAYOUT
+========================= */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   FLIP CARD (CLICK)
+========================= */
+
+.flip-card {
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+/* Hide checkbox */
+.flip-card input {
+  display: none;
+}
+
+.flip-card-inner {
+  position: relative;
+  height: 220px;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+/* Flip on click */
+.flip-card input:checked + .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* =========================
+   CARD STYLES
+========================= */
+
 .resume-card {
-  background: rgba(255, 255, 255, 0.65);
+  position: absolute;
+  inset: 0;
+
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 
@@ -1522,35 +1570,37 @@ body {
   border-radius: 18px;
 
   box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  backface-visibility: hidden;
+  transition: background 0.3s ease;
 }
 
-.resume-card h2 {
-  margin-bottom: 1.25rem;
-  font-size: 1.5rem;
+/* Color change when flipped */
+.flip-card input:checked + .flip-card-inner .resume-card {
+  background: rgba(235, 240, 255, 0.85);
 }
 
-.resume-card ul {
-  list-style: none;
-  padding: 0;
+/* Back side */
+.resume-card.back {
+  transform: rotateY(180deg);
 }
 
-.resume-card li + li {
-  margin-top: 1.25rem;
+/* Typography */
+.resume-card strong {
+  font-size: 1.05rem;
 }
 
 .resume-card span {
-  display: block;
-  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
   color: #777;
 }
 
-/* Skills grid */
-.skills-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 0.75rem;
-}
-.hero-divider {
-  height: 80px;
-  background: rgba(0, 0, 0, 0.06); /* subtle, not harsh */
+.resume-card p {
+  margin-top: 0.75rem;
+  line-height: 1.5;
 }

@@ -232,21 +232,21 @@ window.addEventListener("DOMContentLoaded", () => {
   if (!praiseLayer) return;
 
   const praiseTexts = [
-    "A total team player",
-    "Attention to detail",
-    "Great work ethic",
-    "Strong problem-solving ability",
-    "Jaxon connects the dots",
-    "Asks key questions",
-    "A delight to work with",
-    "Knows how to build and interact with teams",
-    "Friendly demeanor",
-    "Any company would be lucky to have Jaxon",
-    "Amazing!",
-    "Your work ethic will take you far",
-    "Keep building and blessing!",
-    "Absolute stellar teammate!",
-    "Impressive work!"
+    '"A total team player"',
+    '"Attention to detail"',
+   '"Great work ethic"',
+    '"Strong problem-solving ability"',
+    '"Jaxon connects the dots"',
+    '"Asks key questions"',
+    '"A delight to work with"',
+    '"Knows how to build and interact with teams"',
+    '"Friendly demeanor"',
+    '"Any company would be lucky to have Jaxon"',
+    '"Amazing!"',
+    '"Your work ethic will take you far"',
+    '"Keep building and blessing!"',
+    '"Absolute stellar teammate!"',
+    '"Impressive work!"'
   ];
 
   function createPraise() {

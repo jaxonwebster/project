@@ -1756,6 +1756,21 @@ body {
   pointer-events: none;
 }
 
+.endorsements-page .hero-center {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.endorsements-page .hero-title {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 800;
+  color: #1f3d2b;
+  letter-spacing: -0.02em;
+}
+
+
+
 .praise {
   position: absolute;
   max-width: 240px;

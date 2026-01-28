@@ -227,26 +227,34 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
 /* =========================
    FLOATING PRAISE (ENDORSEMENTS HERO)
 ========================= */
+/* =========================
+   FLOATING PRAISE (ENDORSEMENTS HERO)
+========================= */
 window.addEventListener("DOMContentLoaded", () => {
+  if (!document.body.classList.contains("endorsements-page")) return;
+
   const praiseLayer = document.getElementById("praiseLayer");
   if (!praiseLayer) return;
 
+  const isMobile = window.innerWidth < 768;
+  const activeBubbles = [];
+
   const praiseTexts = [
-    '"A total team player"',
-    '"Attention to detail"',
-   '"Great work ethic"',
-    '"Strong problem-solving ability"',
-    '"Jaxon connects the dots"',
-    '"Asks key questions"',
-    '"A delight to work with"',
-    '"Knows how to build and interact with teams"',
-    '"Friendly demeanor"',
-    '"Any company would be lucky to have Jaxon"',
-    '"Amazing!"',
-    '"Your work ethic will take you far"',
-    '"Keep building and blessing!"',
-    '"Absolute stellar teammate!"',
-    '"Impressive work!"'
+    "A total team player",
+    "Attention to detail",
+    "Great work ethic",
+    "Strong problem-solving ability",
+    "Jaxon connects the dots",
+    "Asks key questions",
+    "A delight to work with",
+    "Knows how to build and interact with teams",
+    "Friendly demeanor",
+    "Any company would be lucky to have Jaxon",
+    "Amazing!",
+    "Your work ethic will take you far",
+    "Keep building and blessing!",
+    "Absolute stellar teammate!",
+    "Impressive work!"
   ];
 
   function createPraise() {
@@ -261,7 +269,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let top, left;
     let attempts = 0;
-    const minDistance = 18;
+    const minDistance = isMobile ? 24 : 18;
 
     do {
       top = Math.random() * 80 + 5;
@@ -269,13 +277,18 @@ window.addEventListener("DOMContentLoaded", () => {
       attempts++;
     } while (
       (
-        (left > 35 && left < 65 && top > 25 && top < 75) ||
+        /* avoid title zone */
+        (left > 25 && left < 75 &&
+         top > (isMobile ? 30 : 35) &&
+         top < (isMobile ? 60 : 55)) ||
+
+        /* avoid other bubbles */
         activeBubbles.some(pos =>
           Math.abs(pos.top - top) < minDistance &&
           Math.abs(pos.left - left) < minDistance
         )
       ) &&
-      attempts < 20
+      attempts < 25
     );
 
     praise.style.top = top + "%";
@@ -290,6 +303,9 @@ window.addEventListener("DOMContentLoaded", () => {
     }, 8000);
   }
 
+  // spawn immediately
   createPraise();
-  setInterval(createPraise, 1500);
+
+  // spawn rate adapts to screen size
+  setInterval(createPraise, isMobile ? 2600 : 1500);
 });

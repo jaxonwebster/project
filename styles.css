@@ -348,14 +348,17 @@ body {
   background: transparent;
 }
 .project-image.carousel {
-  position: relative;
-  overflow: hidden;
-  background: transparent; /* 👈 remove black */
+ display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1.5rem 0;   /* vertical breathing room only */
+  background: transparent;
 }
 .carousel img {
+  max-width: 520px;    /* 👈 KEY LINE */
   width: 100%;
-  height: auto;          /* 👈 let image define height */
-  max-height: 380px;     /* keeps it from getting huge */
+  height: auto;
   object-fit: contain;
 
   display: none;
@@ -1260,24 +1263,32 @@ body {
 
 /* Arrows */
 .carousel-btn {
-  position: absolute;
+    position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.6);
+
+  background: rgba(0, 0, 0, 0.55);
   color: #fff;
   border: none;
-  font-size: 2rem;
-  padding: 0.25rem 0.6rem;
-  cursor: pointer;
-  z-index: 2;
+  font-size: 1.8rem;
+
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 3;
 }
 
 .carousel-btn.prev {
-  left: 10px;
+  left: 12px;
 }
 
 .carousel-btn.next {
-  right: 10px;
+  right: 12px;
 }
 /* =========================
    CONTACT SECTION

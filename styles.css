@@ -1901,7 +1901,9 @@ blockquote {
   left: 0;
   z-index: 10;
 }
-/* === Project layout === */
+/* ===============================
+   PROJECT LAYOUT
+================================ */
 .project-row {
   display: flex;
   align-items: center;
@@ -1924,21 +1926,12 @@ blockquote {
   flex: 1;
 }
 
-/* mobile stack */
-@media (max-width: 900px) {
-  .project-row,
-  .project-row.reverse {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .project-content {
-    text-align: left;
-  }
-}
-/* === Auto image rotation === */
+/* ===============================
+   AUTO IMAGE ROTATION
+================================ */
 .auto-rotate {
   position: relative;
+  width: 100%;
   height: 350px;
 }
 
@@ -1954,4 +1947,37 @@ blockquote {
 
 .auto-rotate img.active {
   opacity: 1;
+}
+
+/* ===============================
+   MOBILE FIXES
+================================ */
+@media (max-width: 900px) {
+
+  /* stack text above image */
+  .project-row,
+  .project-row.reverse {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  /* slideshow must keep height on mobile */
+  .auto-rotate {
+    height: 240px; /* tweak if needed */
+    margin-top: 1.5rem;
+  }
+
+  /* prevent stacked images on mobile */
+  .auto-rotate img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+  }
+
+  .auto-rotate img.active {
+    opacity: 1;
+  }
 }

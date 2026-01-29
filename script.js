@@ -194,35 +194,19 @@ if (canvas) {
   animate();
 }
 
-/* =========================
-   CAROUSEL
-========================= */
-document.querySelectorAll(".carousel").forEach((carousel) => {
-  const images = carousel.querySelectorAll("img");
-  const prev = carousel.querySelector(".prev");
-  const next = carousel.querySelector(".next");
-
-  if (!prev || !next || images.length === 0) return;
-
+document.querySelectorAll(".auto-rotate").forEach(container => {
+  const images = container.querySelectorAll("img");
   let index = 0;
 
-  function showImage(i) {
-    images.forEach((img) => img.classList.remove("active"));
-    images[i].classList.add("active");
-  }
+  images[index].classList.add("active");
 
-  prev.addEventListener("click", () => {
-    index = (index - 1 + images.length) % images.length;
-    showImage(index);
-  });
-
-  next.addEventListener("click", () => {
+  setInterval(() => {
+    images[index].classList.remove("active");
     index = (index + 1) % images.length;
-    showImage(index);
-  });
-
-  showImage(index);
+    images[index].classList.add("active");
+  }, 5000);
 });
+
 
 /* =========================
    FLOATING PRAISE (ENDORSEMENTS HERO)

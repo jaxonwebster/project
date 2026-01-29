@@ -1932,7 +1932,7 @@ blockquote {
 .auto-rotate {
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 400px;
 }
 
 .auto-rotate img {
@@ -1949,25 +1949,24 @@ blockquote {
   opacity: 1;
 }
 
-/* ===============================
-   MOBILE FIXES
-================================ */
 @media (max-width: 900px) {
 
-  /* stack text above image */
   .project-row,
   .project-row.reverse {
     flex-direction: column;
     text-align: left;
   }
 
-  /* slideshow must keep height on mobile */
-  .auto-rotate {
-    height: 240px; /* tweak if needed */
-    margin-top: 1.5rem;
+  .project-image {
+    width: 100%;
   }
 
-  /* prevent stacked images on mobile */
+  .auto-rotate {
+    height: 450px;
+    margin-top: 1.5rem;
+    overflow: visible; /* allow scale */
+  }
+
   .auto-rotate img {
     position: absolute;
     inset: 0;
@@ -1975,6 +1974,8 @@ blockquote {
     height: 100%;
     object-fit: contain;
     opacity: 0;
+    transform: scale(1.75); /* 🔥 KEY LINE */
+    transition: opacity 1s ease-in-out, transform 0.3s ease;
   }
 
   .auto-rotate img.active {

@@ -1982,3 +1982,16 @@ blockquote {
     opacity: 1;
   }
 }
+.hero-right {
+  max-width: 350px;
+}
+@media (min-width: 1024px) {
+  .hero-right video {
+    margin-left: -40px;
+  }
+}
+
+.hero-right video {
+  width: 100%;
+  height: auto;
+}
